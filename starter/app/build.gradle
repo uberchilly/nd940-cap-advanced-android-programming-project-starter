@@ -80,6 +80,9 @@ dependencies {
     implementation "androidx.room:room-runtime:$version_room"
     kapt "androidx.room:room-compiler:$version_room"
 
+    //DI
+    implementation "io.insert-koin:koin-android:$koin_version"
+
     // Location
     implementation "com.google.android.gms:play-services-location:$version_play_services_location"
 }
