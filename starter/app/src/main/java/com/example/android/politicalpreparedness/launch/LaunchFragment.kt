@@ -1,36 +1,44 @@
 package com.example.android.politicalpreparedness.launch
 
 import android.os.Bundle
-import android.view.*
+import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.android.politicalpreparedness.R
 import com.example.android.politicalpreparedness.databinding.FragmentLaunchBinding
-import com.example.android.politicalpreparedness.election.adapter.ElectionListAdapter
-import com.example.android.politicalpreparedness.election.adapter.ElectionListener
 
-class LaunchFragment : Fragment() {
+class LaunchFragment : Fragment(R.layout.fragment_launch) {
+    private var _binding: FragmentLaunchBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater,
-                              container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val binding = FragmentLaunchBinding.inflate(inflater)
-        binding.lifecycleOwner = this
 
-        binding.representativeButton.setOnClickListener { navToRepresentatives() }
-        binding.upcomingButton.setOnClickListener { navToElections() }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentLaunchBinding.bind(view)
 
-        return binding.root
+        with(binding) {
+            upcomingElectionBtn.setOnClickListener {
+                navToElections()
+            }
+            findMyRepresentativesBtn.setOnClickListener {
+                navToRepresentatives()
+            }
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun navToElections() {
-        this.findNavController().navigate(LaunchFragmentDirections.actionLaunchFragmentToElectionsFragment())
+        findNavController()
+            .navigate(LaunchFragmentDirections.actionLaunchFragmentToElectionsFragment())
     }
 
     private fun navToRepresentatives() {
-        this.findNavController().navigate(LaunchFragmentDirections.actionLaunchFragmentToRepresentativeFragment())
+        findNavController()
+            .navigate(LaunchFragmentDirections.actionLaunchFragmentToRepresentativeFragment())
     }
 
 }
