@@ -2,8 +2,8 @@
   <library name="Gradle: androidx.cardview:cardview:1.0.0@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b6d81edf363a65b80d0d7d71d171ef8c/cardview-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b6d81edf363a65b80d0d7d71d171ef8c/cardview-1.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b6d81edf363a65b80d0d7d71d171ef8c/cardview-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b6d81edf363a65b80d0d7d71d171ef8c/cardview-1.0.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

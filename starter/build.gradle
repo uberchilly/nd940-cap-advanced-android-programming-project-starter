@@ -16,11 +16,13 @@ buildscript {
         version_play_services_location = "18.0.0"
         version_room = "2.3.0"
         koin_version = "3.1.2"
+        version_glide = "4.12.0"
     }
 
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$version_android_gradle_plugin"
@@ -34,6 +36,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 }
 
