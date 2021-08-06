@@ -35,6 +35,7 @@ import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
 
@@ -43,7 +44,6 @@ class DetailFragment : Fragment(R.layout.fragment_representative) {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     companion object {
-        //TODO: Add Constant for Location request
         const val REQUEST_PERMISSION_CODE = 100
         const val REQUEST_TURN_DEVICE_LOCATION_ON_CODE = 101
     }
@@ -51,7 +51,7 @@ class DetailFragment : Fragment(R.layout.fragment_representative) {
     private var _binding: FragmentRepresentativeBinding? = null
     private val binding get() = _binding!!
     lateinit var spinnerAdapter: ArrayAdapter<String>
-    private val viewModel: RepresentativeViewModel by inject()
+    private val viewModel: RepresentativeViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

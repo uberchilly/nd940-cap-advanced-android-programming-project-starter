@@ -16,6 +16,7 @@ import com.example.android.politicalpreparedness.navigation.observe
 import com.example.android.politicalpreparedness.utils.AsyncTaskState
 import com.example.android.politicalpreparedness.utils.dpToPx
 import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class ElectionsFragment : Fragment(R.layout.fragment_election) {
@@ -26,7 +27,7 @@ class ElectionsFragment : Fragment(R.layout.fragment_election) {
 
     private val navigationDispatcher: NavigationDispatcher by inject()
 
-    private val viewModel: ElectionsViewModel by inject()
+    private val viewModel: ElectionsViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
