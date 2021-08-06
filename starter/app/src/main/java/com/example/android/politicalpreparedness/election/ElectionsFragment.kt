@@ -26,20 +26,7 @@ class ElectionsFragment : Fragment(R.layout.fragment_election) {
 
     private val navigationDispatcher: NavigationDispatcher by inject()
 
-    //TODO: Declare ViewModel
-
     private val viewModel: ElectionsViewModel by inject()
-
-//
-//        //TODO: Add ViewModel values and create ViewModel
-//
-//        //TODO: Add binding values
-//
-//        //TODO: Link elections to voter info
-//
-//        //TODO: Initiate recycler adapters
-//
-//        //TODO: Populate recycler adapters
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -74,13 +61,12 @@ class ElectionsFragment : Fragment(R.layout.fragment_election) {
             viewModel.upcomingElectionsLiveData.observe(viewLifecycleOwner) {
                 when (it) {
                     AsyncTaskState.InitialState -> {
-                        //
                     }
                     AsyncTaskState.LoadingState -> {
-                        //todo: add loading state
+                        //add loading state
                     }
                     is AsyncTaskState.ErrorState -> {
-                        //todo: display error and retry
+                        //display error and retry
                     }
                     is AsyncTaskState.SuccessState -> {
                         upcomingElectionAdapter.updateList(it.data)

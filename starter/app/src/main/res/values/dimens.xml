@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="default_padding">8dp</dimen>
+    <dimen name="medium_padding_size">20dp</dimen>
+    <dimen name="profile_image_size">40dp</dimen>
+    <dimen name="social_image_size">20dp</dimen>
+    <dimen name="very_small_padding">2dp</dimen>
 
     <!-- TODO: Add necessary dimension values -->
 
